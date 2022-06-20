@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Ollie-Judge/add-movie-backend/issues"
   },
-  "homepage": "https://github.com/Ollie-Judge/add-movie-backend#readme"
+  "homepage": "https://github.com/Ollie-Judge/add-movie-backend#readme",
+  "dependencies": {
+    "yargs": "^17.5.1"
+  }
 }

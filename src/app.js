@@ -1,11 +1,18 @@
 const Movie = require("./utils");
-const input = process.argv;
+const yargs = require("yargs");
 
-if (input[2] === "add") {
-  const movieObj = new Movie(input[3], input[4]);
-  const movieObj2 = new Movie(input[5], input[6]);
-  const movieObj3 = new Movie(input[7], input[8]);
-  movieObj.add();
-  movieObj2.add();
-  movieObj3.add();
-}
+console.log(yargs.argv);
+
+const App = (argvArr) => {
+  if (argvArr[2] === "add") {
+    const movieObj = new Movie(argvArr[3], argvArr[4]);
+    movieObj.add();
+  } else if (argvArr[2] === "addMulti") {
+    const movie1 = new Movie(argvArr[3], argvArr[4]);
+    const movie2 = new Movie(argvArr[5], argvArr[6]);
+    movie1.add();
+    movie2.add();
+  }
+};
+
+/* app(process.argv); */

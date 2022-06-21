@@ -3,16 +3,24 @@ const yargs = require("yargs");
 
 console.log(yargs.argv);
 
-const App = (argvArr) => {
-  if (argvArr[2] === "add") {
-    const movieObj = new Movie(argvArr[3], argvArr[4]);
-    movieObj.add();
-  } else if (argvArr[2] === "addMulti") {
-    const movie1 = new Movie(argvArr[3], argvArr[4]);
-    const movie2 = new Movie(argvArr[5], argvArr[6]);
-    movie1.add();
-    movie2.add();
+const App = (yargsOb) => {
+  try {
+    if (yargsObj.add) {
+      const movieObj = new Movie(yargsObj.title, yargsObj.actor);
+      movieObj.add();
+      console.log(movie1.list());
+    } else if (yargsObj.addMulti) {
+      const movie1 = new Movie(yargsObj.title1, yargsObj.actor1);
+      const movie2 = new Movie(yargsObj.title2, yargsObj.actor2);
+      movie1.add();
+      movie2.add();
+      console.log(movie1.list());
+    } else {
+      console.log("try something else");
+    }
+  } catch (error) {
+    console.log("Error");
   }
 };
 
-/* app(process.argv); */
+app(yargs.argv);
